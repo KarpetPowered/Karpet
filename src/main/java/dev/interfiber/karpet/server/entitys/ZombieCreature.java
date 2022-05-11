@@ -7,6 +7,8 @@ import net.minestom.server.entity.ai.EntityAIGroupBuilder;
 import net.minestom.server.entity.ai.goal.MeleeAttackGoal;
 import net.minestom.server.entity.ai.goal.RandomLookAroundGoal;
 import net.minestom.server.entity.ai.target.ClosestEntityTarget;
+import net.minestom.server.entity.damage.DamageType;
+import net.minestom.server.event.entity.EntityAttackEvent;
 import net.minestom.server.utils.time.TimeUnit;
 
 /**
@@ -27,5 +29,10 @@ public class ZombieCreature extends MinecraftEntity {
                 .addGoalSelector(new RandomLookAroundGoal(this, 15))
                 .build()
         );
+        eventNode().addListener(EntityAttackEvent.class, event -> {
+            if (event.getTarget() instanceof Player player){
+                player.damage(DamageType.fromEntity(event.getEntity()), 5);
+            }
+        });
     }
 }
