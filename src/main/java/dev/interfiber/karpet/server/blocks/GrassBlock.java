@@ -3,13 +3,13 @@ package dev.interfiber.karpet.server.blocks;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.instance.block.BlockHandler;
 import net.minestom.server.utils.NamespaceID;
-import org.antlr.v4.runtime.misc.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  *
  * @author persephone
  */
-public class BeeNestBlock implements BlockHandler {
+public class GrassBlock implements BlockHandler {
     @Override
     public void onPlace(@NotNull Placement placement) {
         if (placement instanceof PlayerPlacement) {
@@ -21,6 +21,6 @@ public class BeeNestBlock implements BlockHandler {
     @Override
     public @NotNull NamespaceID getNamespaceId() {
         // Namespace required for serialization purpose
-        return NamespaceID.from("minecraft:bee_nest");
+        return NamespaceID.from("minecraft:grassblock");
     }
 }
