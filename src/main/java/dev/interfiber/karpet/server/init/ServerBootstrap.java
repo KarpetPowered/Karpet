@@ -2,6 +2,7 @@ package dev.interfiber.karpet.server.init;
 
 import dev.interfiber.karpet.KarpetLauncher;
 import dev.interfiber.karpet.server.events.PlayerLogin;
+import dev.interfiber.karpet.server.recipes.RecipeLoader;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
@@ -21,12 +22,14 @@ public class ServerBootstrap {
         MinecraftServer minecraftServer = MinecraftServer.init();
         InstanceManager instanceManager = MinecraftServer.getInstanceManager();
         InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
+        LOG.info("Loading recipes...");
+        RecipeLoader.LoadAllRecipes(MinecraftServer.getRecipeManager());
         LOG.info("Loading world...");
         instanceContainer.setChunkLoader(new AnvilLoader("world"));
         LOG.info("Adding event handlers");
         GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
         globalEventHandler.addListener(PlayerLoginEvent.class, event -> {
-              PlayerLogin.FireEvent(event, instanceContainer);
+            PlayerLogin.FireEvent(event, instanceContainer);
         });
         LOG.info("Binding server to port...");
         minecraftServer.start("0.0.0.0", 25565);
