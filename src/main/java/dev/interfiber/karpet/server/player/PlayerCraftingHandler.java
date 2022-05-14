@@ -26,7 +26,7 @@ public class PlayerCraftingHandler {
         }
     }
     private static boolean CraftClick(ClickType Type){
-        if (Type == ClickType.RIGHT_CLICK || Type == ClickType.LEFT_CLICK){
+        if (Type == ClickType.RIGHT_CLICK || Type == ClickType.LEFT_CLICK || Type == ClickType.RIGHT_DRAGGING || Type == ClickType.LEFT_DRAGGING){
             return true;
         } else {
             return false;
@@ -74,7 +74,6 @@ public class PlayerCraftingHandler {
                 } else {
                     SelectedItems.put(slot, CursorItem);
                 }
-                System.out.println(SelectedItems);
                 // Query all loaded recipes
                 // Basically loop over all provided recipes, until we find one with the same item stucture as the current
                 // crafting table, when we find it set the crafting table output item and break the loop. Once the item is clicked we clear the grid
