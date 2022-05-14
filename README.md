@@ -1,5 +1,6 @@
 # Karpet
 Karpet is a open-source minestom server built for vanilla
+
 [![Java CI with Gradle](https://github.com/Interfiber/Karpet/actions/workflows/gradle.yml/badge.svg)](https://github.com/Interfiber/Karpet/actions/workflows/gradle.yml)
 
 ## Status
