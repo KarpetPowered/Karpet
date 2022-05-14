@@ -15,7 +15,7 @@ public class OakPlanksRecipe extends MinecraftRecipe {
                 ItemStack.AIR,
                 ItemStack.AIR
         );
-        this.Result = ItemStack.of(Material.OAK_PLANKS, 64);
+        this.Result = ItemStack.of(Material.OAK_PLANKS, 4);
     }
     @Override
     public boolean CanCraftInPortableCrafting(){
