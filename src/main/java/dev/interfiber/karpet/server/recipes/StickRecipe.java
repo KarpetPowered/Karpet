@@ -6,16 +6,16 @@ import net.minestom.server.network.packet.server.play.DeclareRecipesPacket.Ingre
 
 import java.util.List;
 
-public class OakPlanksRecipe extends MinecraftRecipe {
-    public OakPlanksRecipe(){
-        this.RecipeID = "oak_planks";
+public class StickRecipe extends MinecraftRecipe {
+    public StickRecipe(){
+        this.RecipeID = "stick";
         this.Items = List.of(
-                ItemStack.of(Material.OAK_LOG, 1),
+                ItemStack.of(Material.OAK_PLANKS, 1),
                 ItemStack.AIR,
-                ItemStack.AIR,
+                ItemStack.of(Material.OAK_PLANKS, 1),
                 ItemStack.AIR
         );
-        this.Result = ItemStack.of(Material.OAK_PLANKS, 64);
+        this.Result = ItemStack.of(Material.STICK, 4);
     }
     @Override
     public boolean CanCraftInPortableCrafting(){

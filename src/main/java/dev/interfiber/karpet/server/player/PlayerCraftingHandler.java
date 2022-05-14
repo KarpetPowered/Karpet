@@ -34,6 +34,10 @@ public class PlayerCraftingHandler {
     }
     public static void AddCraftEvent(Player player, List<MinecraftRecipe> Recipes){
         HashMap<Integer, ItemStack> SelectedItems = new HashMap<Integer, ItemStack>();
+        SelectedItems.put(InventoryConstants.PortableInventorySlot1, ItemStack.AIR);
+        SelectedItems.put(InventoryConstants.PortableInventorySlot2, ItemStack.AIR);
+        SelectedItems.put(InventoryConstants.PortableInventorySlot3, ItemStack.AIR);
+        SelectedItems.put(InventoryConstants.PortableInventorySlot4, ItemStack.AIR);
         AtomicReference<String> RecipeOutputId = new AtomicReference<>("");
         player.getInventory().addInventoryCondition((targetPlayer, slot, clickType, inventoryConditionResult) -> {
             if (slot == InventoryConstants.PortableInventoryOutputSlot && SelectedItems.size() == 0){
@@ -48,6 +52,10 @@ public class PlayerCraftingHandler {
                 LOG.info("player with uuid: " + targetPlayer.getUuid() + " crafted " + RecipeOutputId.get());
                 // Clear memory of crafting
                 SelectedItems.clear();
+                SelectedItems.put(InventoryConstants.PortableInventorySlot1, ItemStack.AIR);
+                SelectedItems.put(InventoryConstants.PortableInventorySlot2, ItemStack.AIR);
+                SelectedItems.put(InventoryConstants.PortableInventorySlot3, ItemStack.AIR);
+                SelectedItems.put(InventoryConstants.PortableInventorySlot4, ItemStack.AIR);
                 // Clear inventory
                 targetPlayer.getInventory().setItemStack(InventoryConstants.PortableInventorySlot1, ItemStack.AIR);
                 targetPlayer.getInventory().setItemStack(InventoryConstants.PortableInventorySlot2, ItemStack.AIR);
@@ -62,10 +70,11 @@ public class PlayerCraftingHandler {
                 // Get the current clicked item
                 ItemStack CursorItem = inventoryConditionResult.getCursorItem();
                 if (CursorItem.isAir()){
-                    SelectedItems.remove(slot);
+                    SelectedItems.put(slot, ItemStack.AIR);
                 } else {
                     SelectedItems.put(slot, CursorItem);
                 }
+                System.out.println(SelectedItems);
                 // Query all loaded recipes
                 // Basically loop over all provided recipes, until we find one with the same item stucture as the current
                 // crafting table, when we find it set the crafting table output item and break the loop. Once the item is clicked we clear the grid
@@ -79,6 +88,8 @@ public class PlayerCraftingHandler {
                             targetPlayer.getInventory().setItemStack(InventoryConstants.PortableInventoryOutputSlot, ResultItem);
                             RecipeOutputId.set(Recipe.RecipeID);
                             break;
+                        } else {
+                            targetPlayer.getInventory().setItemStack(InventoryConstants.PortableInventoryOutputSlot, ItemStack.AIR);
                         }
                     }
                 }
