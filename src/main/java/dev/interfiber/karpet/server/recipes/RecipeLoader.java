@@ -21,8 +21,10 @@ public class RecipeLoader {
         // TODO
         LOG.info("Loading recipes...");
         OakPlanksRecipe OakPlanks = new OakPlanksRecipe();
+        CraftingTableRecipe CraftingTable = new CraftingTableRecipe();
         // Load all recipes
         LoadedRecipes.add(OakPlanks);
+        LoadedRecipes.add(CraftingTable);
     }
     public static List<MinecraftRecipe> GetLoadedRecipes(){
         return LoadedRecipes;
