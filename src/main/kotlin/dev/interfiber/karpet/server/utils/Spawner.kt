@@ -1,0 +1,37 @@
+package dev.interfiber.karpet.server.utils
+
+import dev.interfiber.karpet.server.entitys.EntityStats
+import dev.interfiber.karpet.server.entitys.ZombieCreature
+import net.minestom.server.coordinate.Pos
+import net.minestom.server.entity.Entity
+import net.minestom.server.entity.EntityType
+import net.minestom.server.instance.InstanceContainer
+
+/**
+ *
+ * @author persephone
+ */
+class Spawner {
+    var stats: EntityStats? = null
+    fun spawnEntity(Type: EntityType, Position: Pos?, SpawnInstance: InstanceContainer?) {
+        var entityToSpawn: Entity? = null
+        if (Type === EntityType.ZOMBIE) {
+            entityToSpawn = ZombieCreature(stats!!)
+        }
+        if (entityToSpawn == null) {
+            println("Invalid entity type")
+            return
+        }
+        println(Position)
+        if (Position != null && SpawnInstance != null) {
+            entityToSpawn.setInstance(SpawnInstance, Position)
+        } else {
+            println("Position: $Position")
+            println("SpawnInstance: $SpawnInstance")
+            println("One of the above variables is null!")
+            println("Failed to spawn entity")
+            return
+        }
+    }
+
+}
