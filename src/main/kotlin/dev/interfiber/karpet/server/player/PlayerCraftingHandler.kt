@@ -63,7 +63,7 @@ class PlayerCraftingHandler {
                 // crafting table, when we find it set the crafting table output item and break the loop. Once the item is clicked we clear the grid
                 for (z in Recipes.indices) {
                     val recipe: MinecraftRecipe = Recipes[z]
-                    if (recipe.CanCraftInPortableCrafting()) {
+                    if (recipe.canCraftInPortableCrafting()) {
                         val values: Collection<ItemStack> = selectedItems.values
                         val itemsList: List<ItemStack> = ArrayList(values)
                         if (recipe.items?.equals(itemsList) == true) {

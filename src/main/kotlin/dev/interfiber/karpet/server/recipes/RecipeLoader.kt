@@ -7,12 +7,12 @@ object RecipeLoader {
 
     fun loadAllRecipes() {
         val oakPlanksRecipe = OakPlanksRecipe()
-//        val CraftingTable = CraftingTableRecipe()
-//        val Stick = StickRecipe()
+        val stickRecipe = StickRecipe()
+        val craftingTableRecipe = CraftingTableRecipe()
         // Load all recipes
         LoadedRecipes.add(oakPlanksRecipe)
-//        LoadedRecipes.add(CraftingTable)
-//        LoadedRecipes.add(Stick)
+        LoadedRecipes.add(stickRecipe)
+        LoadedRecipes.add(craftingTableRecipe)
     }
 
     fun getLoadedRecipes(): List<MinecraftRecipe> {
