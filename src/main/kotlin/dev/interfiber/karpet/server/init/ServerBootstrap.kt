@@ -1,7 +1,9 @@
 package dev.interfiber.karpet.server.init
+import dev.interfiber.karpet.server.events.PlayerLeave
 import dev.interfiber.karpet.server.events.PlayerLogin
 import dev.interfiber.karpet.server.recipes.RecipeLoader
 import net.minestom.server.MinecraftServer
+import net.minestom.server.event.player.PlayerDisconnectEvent
 import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.instance.AnvilLoader
 
@@ -18,6 +20,13 @@ class ServerBootstrap {
         ) { event: PlayerLoginEvent? ->
             if (event != null) {
                 PlayerLogin().fireEvent(event, instanceContainer)
+            }
+        }
+        globalEventHandler.addListener(
+            PlayerDisconnectEvent::class.java
+        ) { leaveEvent: PlayerDisconnectEvent? ->
+            if (leaveEvent != null) {
+                PlayerLeave().fireEvent(leaveEvent.player)
             }
         }
         minecraftServer.start("0.0.0.0", 25565)

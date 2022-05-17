@@ -2,6 +2,7 @@ package dev.interfiber.karpet.server.player
 
 import dev.interfiber.karpet.server.utils.Probability
 import net.minestom.server.event.player.PlayerBlockBreakEvent
+import net.minestom.server.event.player.PlayerBlockInteractEvent
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.block.Block
 import net.minestom.server.item.Material
@@ -28,6 +29,9 @@ object PlayerBlockHandler {
             if (shouldBreak) {
                 PlayerBackpack().spawnItemStack(Material.WHEAT_SEEDS, eventPlayer.position, playerInstance)
             }
+        } else if (blockType === Block.STONE){
+            // TODO Once enchantments are done, check if we have silk touch
+            PlayerBackpack().spawnItemStack(Material.COBBLESTONE, eventPlayer.position, playerInstance)
         }
         eventPlayer.inventory.update()
     }

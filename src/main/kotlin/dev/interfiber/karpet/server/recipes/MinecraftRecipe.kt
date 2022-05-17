@@ -4,8 +4,10 @@ import net.minestom.server.item.ItemStack
 
 open class MinecraftRecipe {
     var recipeID: String? = null
-    var items // 6x6 square grid, for anything blank mark it as Material.AIR
+    var portableItems // List of items used to craft the item in the portable table
             : List<ItemStack>? = null
+    var items // List of items used to craft the item in the crafting table
+        : List<ItemStack>? = null
     var result: ItemStack? = null
 //    fun CanCraft(player: Player?): Boolean {
 //        return false

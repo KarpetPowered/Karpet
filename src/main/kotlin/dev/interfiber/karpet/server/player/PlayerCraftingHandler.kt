@@ -6,6 +6,8 @@ import net.minestom.server.inventory.click.ClickType
 import net.minestom.server.inventory.condition.InventoryConditionResult
 import net.minestom.server.item.ItemStack
 import java.util.concurrent.atomic.AtomicReference
+import mu.KotlinLogging
+private val logger = KotlinLogging.logger {}
 
 
 class PlayerCraftingHandler {
@@ -48,6 +50,7 @@ class PlayerCraftingHandler {
                 // Update inventory
                 player.inventory.update()
                 // Log craft to console (Server admin can view everything being crafted)
+                logger.info(player.username + " crafted a $recipeOutputID")
                 return@addInventoryCondition
             }
             if (indexCraft(slot) && craftClick(clickType)) {
@@ -56,7 +59,7 @@ class PlayerCraftingHandler {
                 if (cursorItem.isAir) {
                     selectedItems[slot] = ItemStack.AIR
                 } else {
-                    selectedItems[slot] = cursorItem
+                    selectedItems[slot] = ItemStack.of(cursorItem.material(), 1)
                 }
                 // Query all loaded recipes
                 // Basically loop over all provided recipes, until we find one with the same item stucture as the current
@@ -66,7 +69,7 @@ class PlayerCraftingHandler {
                     if (recipe.canCraftInPortableCrafting()) {
                         val values: Collection<ItemStack> = selectedItems.values
                         val itemsList: List<ItemStack> = ArrayList(values)
-                        if (recipe.items?.equals(itemsList) == true) {
+                        if (recipe.portableItems?.equals(itemsList) == true) {
                             val resultItem: ItemStack? = recipe.result // TODO calculate the amount for items crafted
                             if (resultItem != null) {
                                 targetPlayer.inventory
