@@ -4,9 +4,11 @@ Karpet is a work in progress minestom server written for vanilla
 
 ## Building
 First install the following
-    - [JDK 17](https://adoptium.net)
-    - [Gradle](https://gradle.org) (not required, you can use gradlew)
-    - [Git](https://git-scm.com)
+
+   - [JDK 17](https://adoptium.net)
+   - [Gradle](https://gradle.org) (not required, you can use gradlew)
+   - [Git](https://git-scm.com)
+    
 Then clone this repo like below:
 ```shell
 git clone https://github.com/Interfiber/Karpet.git
