@@ -5,10 +5,6 @@ import mu.KotlinLogging
 import net.kyori.adventure.text.Component
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.server.ServerListPingEvent
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.util.*
-import javax.imageio.ImageIO
 
 
 private val logger = KotlinLogging.logger {}

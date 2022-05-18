@@ -31,6 +31,10 @@ object PlayerBlockHandler {
         } else if (blockType === Block.STONE){
             // TODO Once enchantments are done, check if we have silk touch
             PlayerBackpack().spawnItemStack(Material.COBBLESTONE, eventPlayer.position, playerInstance)
+        } else if (blockType == Block.IRON_ORE){
+            if (PlayerBackpack().canMineBlock(Block.IRON_ORE, eventPlayer)){
+                PlayerBackpack().spawnItemStack(Material.RAW_IRON, eventPlayer.position, playerInstance)
+            }
         }
         eventPlayer.inventory.update()
     }

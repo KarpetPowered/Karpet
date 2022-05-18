@@ -40,16 +40,8 @@ class PlayerCraftingTableHandler {
         var selectedItems = HashMap<Int, ItemStack>()
         selectedItems = initAir(selectedItems)
         val recipeOutputID = AtomicReference("")
-        craftingTableInventory.addInventoryCondition { targetPlayer: Player, slot: Int, clickType: ClickType, inventoryConditionResult: InventoryConditionResult ->
-            if (slot == InventoryConstants.PortableInventoryOutputSlot && selectedItems.size == 0) {
-                // Clear the output slot
-                craftingTableInventory.setItemStack(InventoryConstants.PortableInventoryOutputSlot, ItemStack.AIR)
-                // Update & cancel
-                craftingTableInventory.update()
-                inventoryConditionResult.isCancel = true
-                targetPlayer.sendMessage("Cant craft item: Crafting grid is empty")
-            }
-            if (slot == InventoryConstants.CraftingInventoryOutputSlot) {
+        craftingTableInventory.addInventoryCondition { _: Player, slot: Int, clickType: ClickType, inventoryConditionResult: InventoryConditionResult ->
+            if (slot == InventoryConstants.CraftingInventoryOutputSlot && recipeOutputID.get() != null) {
                 // Clear memory of crafting
                 selectedItems.clear()
                 selectedItems = initAir(selectedItems)
@@ -96,6 +88,7 @@ class PlayerCraftingTableHandler {
                     } else {
                         craftingTableInventory
                             .setItemStack(InventoryConstants.CraftingInventoryOutputSlot, ItemStack.AIR)
+                        recipeOutputID.set(null)
                     }
                 }
             }
