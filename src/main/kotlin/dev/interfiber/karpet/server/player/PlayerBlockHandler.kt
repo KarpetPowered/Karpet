@@ -2,7 +2,6 @@ package dev.interfiber.karpet.server.player
 
 import dev.interfiber.karpet.server.utils.Probability
 import net.minestom.server.event.player.PlayerBlockBreakEvent
-import net.minestom.server.event.player.PlayerBlockInteractEvent
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.block.Block
 import net.minestom.server.item.Material

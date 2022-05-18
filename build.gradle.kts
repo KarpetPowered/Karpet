@@ -20,6 +20,7 @@ dependencies {
     testImplementation(kotlin("test"))
     implementation("com.github.Minestom:Minestom:-SNAPSHOT")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
+    implementation("com.moandjiezana.toml:toml4j:0.7.2")
 
 }
 
