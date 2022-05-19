@@ -24,7 +24,6 @@ class ServerListView {
             responseData.maxPlayer = serverMaxPlayers.toInt()
         }
         if (serverShowPlayers == true){
-            println(MinecraftServer.getConnectionManager().onlinePlayers)
             responseData.addEntries(MinecraftServer.getConnectionManager().onlinePlayers);
         }
     }

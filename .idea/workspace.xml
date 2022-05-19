@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/dev.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerListView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBackpack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBackpack.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingTableHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingTableHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/karpet.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/karpet.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -77,7 +77,6 @@ class PlayerCraftingTableHandler {
                     val values: Collection<ItemStack> = selectedItems.values
                     val itemsList: List<ItemStack> = ArrayList(values)
                     if (recipe.items?.equals(itemsList) == true) {
-                        println(recipe.recipeID)
                         val resultItem: ItemStack? = recipe.result // TODO calculate the amount for items crafted
                         if (resultItem != null) {
                             craftingTableInventory

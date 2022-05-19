@@ -7,7 +7,7 @@ icon = "server.png" # Server icon, does not work at the moment due to a bug idk 
 desc = "My amazing server" # Description of server
 show-player-names = false # Show player names on server list
 online-mode = true # Authenticate players
-max-players = 4
+max-players = 0
 
 
 [afk]

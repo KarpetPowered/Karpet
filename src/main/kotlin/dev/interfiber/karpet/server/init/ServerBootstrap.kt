@@ -1,4 +1,5 @@
 package dev.interfiber.karpet.server.init
+
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
 import dev.interfiber.karpet.server.events.PlayerLeave
@@ -9,8 +10,13 @@ import net.minestom.server.MinecraftServer
 import net.minestom.server.event.player.PlayerDisconnectEvent
 import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.event.server.ServerListPingEvent
+import net.minestom.server.extras.MojangAuth
 import net.minestom.server.instance.AnvilLoader
+import net.minestom.server.utils.NamespaceID
+import net.minestom.server.world.DimensionType
 import java.io.File
+import javax.swing.Spring.height
+
 
 private val logger = KotlinLogging.logger {}
 
@@ -29,10 +35,23 @@ class ServerBootstrap {
         // Load the config file
         logger.info("Loading config file...")
         val config = configData?.let { ConfigLoader().getConfig(it) }
+        val maxPlayers = config?.getTable("server")?.getLong("max-players")?.toInt()
+
+        // Create server
+        logger.info("Initializing MinecraftServer...")
+        val minecraftServer = MinecraftServer.init()
+        val onlineModeEnable = config?.getTable("server")?.getBoolean("online-mode")
+        if (onlineModeEnable == true){
+            logger.info("Enabling player authentication...")
+            MojangAuth.init();
+        } else {
+            logger.warn("Player authentication is disabled, this can allow players to play")
+            logger.warn("on the server without an account, or force their username to anything")
+            logger.warn("set 'online-mode = true' in karpet.toml to prevent this warning!")
+        }
 
         // Load recipes
         logger.info("Loading recipes...")
-        val minecraftServer = MinecraftServer.init()
         RecipeLoader.loadAllRecipes()
 
         // Load world
@@ -48,7 +67,13 @@ class ServerBootstrap {
             PlayerLoginEvent::class.java
         ) { event: PlayerLoginEvent? ->
             if (event != null) {
-                PlayerLogin().fireEvent(event, instanceContainer)
+                // check max players
+                if (MinecraftServer.getConnectionManager().onlinePlayers.size > maxPlayers!!){
+                    logger.warn("Kicking player " + event.player.username + ", due to player limit")
+                    event.player.kick("Server is full, please connect at a later time")
+                } else {
+                    PlayerLogin().fireEvent(event, instanceContainer)
+                }
             }
         }
         globalEventHandler.addListener(
