@@ -7,7 +7,7 @@ icon = "server.png" # Server icon, does not work at the moment due to a bug idk 
 desc = "My amazing server" # Description of server
 show-player-names = false # Show player names on server list
 online-mode = true # Authenticate players
-max-players = 4
+max-players = 4 # Max players on the server at one time
 
 
 [afk]
@@ -15,8 +15,7 @@ afk-kick = false # Enable AFK kick
 afk-kick-time = 20 # Time in mins until the afk kick kicks the player
 
 [world]
-world-name = "epic_world" # Folder name of the world
-worlds-folder = "worlds" # Location of all world files
+# Karpet only loads the world located in the folder named world
 gamemode = "survival" # Server gamemode, survival/creative/adventure
 
 [whitelist]

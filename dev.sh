@@ -12,7 +12,7 @@ if [[ "$1" == "" ]]; then
 fi
 
 if [[ "$1" == "build" ]]; then
-  gradle shadowJar --console=
+  gradle shadowJar
 fi
 
 if [[ "$1" == "devserver" ]]; then

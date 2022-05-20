@@ -21,13 +21,13 @@ import net.minestom.server.instance.block.Block
 
 
 class PlayerLogin {
-    fun fireEvent(event: PlayerLoginEvent, instanceContainer: InstanceContainer?) {
+    fun fireEvent(event: PlayerLoginEvent, instanceContainer: InstanceContainer) {
         val player: Player = event.player
         if (instanceContainer != null) {
             event.setSpawningInstance(instanceContainer)
         }
         // Get spawn location
-        val location: SpawnLocation? = instanceContainer?.let { SpawnLocator().getSpawnLocation(it) }
+        val location: SpawnLocation? = SpawnLocator().getSpawnLocation(instanceContainer)
         if (location != null) {
             player.respawnPoint = Pos(location.spawnX, location.spawnY, location.spawnZ)
         }

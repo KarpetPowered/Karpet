@@ -12,10 +12,8 @@ import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.event.server.ServerListPingEvent
 import net.minestom.server.extras.MojangAuth
 import net.minestom.server.instance.AnvilLoader
-import net.minestom.server.utils.NamespaceID
-import net.minestom.server.world.DimensionType
 import java.io.File
-import javax.swing.Spring.height
+import kotlin.system.exitProcess
 
 
 private val logger = KotlinLogging.logger {}
@@ -56,6 +54,7 @@ class ServerBootstrap {
 
         // Load world
         logger.info("Preparing world...")
+
         val instanceManager = MinecraftServer.getInstanceManager()
         val instanceContainer = instanceManager.createInstanceContainer()
         instanceContainer.chunkLoader = AnvilLoader("world")
