@@ -8,6 +8,7 @@ desc = "My amazing server" # Description of server
 show-player-names = false # Show player names on server list
 online-mode = true # Authenticate players
 max-players = 4 # Max players on the server at one time
+enable-bstats = true # Enable server metrics, helps me se who uses the server
 
 
 [afk]

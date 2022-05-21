@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="Add BStats">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/metrics/Tracker.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev.sh" beforeDir="false" afterPath="$PROJECT_DIR$/dev.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/karpet.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/config/ConfigUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/config/ConfigUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/karpet.toml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/karpet.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,15 +73,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/persephone/repos/karpet-services",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -134,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.karpet [build]" />
         <item itemvalue="Gradle.karpet [shadowJar]" />
+        <item itemvalue="Gradle.karpet [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -160,6 +159,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add BStats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add BStats" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

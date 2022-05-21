@@ -1,5 +1,6 @@
 package dev.interfiber.karpet.server.init
 
+import dev.interfiber.karpet.server.metrics.Tracker
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
 import dev.interfiber.karpet.server.events.PlayerLeave
@@ -13,7 +14,7 @@ import net.minestom.server.event.server.ServerListPingEvent
 import net.minestom.server.extras.MojangAuth
 import net.minestom.server.instance.AnvilLoader
 import java.io.File
-import kotlin.system.exitProcess
+import java.io.FileWriter
 
 
 private val logger = KotlinLogging.logger {}
@@ -23,6 +24,11 @@ class ServerBootstrap {
         // Check for config file
         logger.info("Checking for config file...")
         var configData: String? = if (!File("karpet.toml").exists()){
+            logger.info("Creating server UUID...")
+            val writer = FileWriter(".karpetuuid")
+            writer.write(ConfigUtils().generateServerUUID())
+            writer.close()
+
             logger.info("Failed to find config file, creating it")
             ConfigUtils().createConfig()
         } else {
@@ -59,6 +65,14 @@ class ServerBootstrap {
         val instanceContainer = instanceManager.createInstanceContainer()
         instanceContainer.chunkLoader = AnvilLoader("world")
         val globalEventHandler = MinecraftServer.getGlobalEventHandler()
+
+
+        // Metrics
+        val serverConfig = config?.getTable("server")
+        if (serverConfig?.getBoolean("enable-bstats") == true){
+            logger.info("Enabling metrics...")
+            Tracker().reportInfo(serverConfig)
+        }
 
         // Add global events
         logger.info("Adding server events...")

@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 
 plugins {
     kotlin("jvm") version "1.6.20"
@@ -21,7 +23,7 @@ dependencies {
     implementation("com.github.Minestom:Minestom:-SNAPSHOT")
     implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
     implementation("com.moandjiezana.toml:toml4j:0.7.2")
-
+    implementation("org.bstats:bstats-base:3.0.0")
 }
 
 tasks.test {
@@ -35,6 +37,16 @@ tasks.withType<KotlinCompile> {
 application {
     mainClass.set("KarpetLauncherKt")
 }
+
+
+tasks {
+    named<ShadowJar>("shadowJar") {
+        mergeServiceFiles()
+        relocate("org.bstats", "dev.interfiber.karpet.bstats")
+
+    }
+}
+
 tasks.withType<Jar> {
     manifest {
         attributes["Main-Class"] = "KarpetLauncherKt"
