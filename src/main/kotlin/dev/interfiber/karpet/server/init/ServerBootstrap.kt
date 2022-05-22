@@ -1,5 +1,6 @@
 package dev.interfiber.karpet.server.init
 
+import dev.interfiber.karpet.server.biomes.BiomeLoader
 import dev.interfiber.karpet.server.metrics.Tracker
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
@@ -23,7 +24,7 @@ class ServerBootstrap {
     fun startServer(){
         // Check for config file
         logger.info("Checking for config file...")
-        var configData: String? = if (!File("karpet.toml").exists()){
+        val configData: String = if (!File("karpet.toml").exists()){
             logger.info("Creating server UUID...")
             val writer = FileWriter(".karpetuuid")
             writer.write(ConfigUtils().generateServerUUID())
@@ -38,7 +39,7 @@ class ServerBootstrap {
 
         // Load the config file
         logger.info("Loading config file...")
-        val config = configData?.let { ConfigLoader().getConfig(it) }
+        val config = configData.let { ConfigLoader().getConfig(it) }
         val maxPlayers = config?.getTable("server")?.getLong("max-players")?.toInt()
 
         // Create server
@@ -55,8 +56,12 @@ class ServerBootstrap {
         }
 
         // Load recipes
-        logger.info("Loading recipes...")
+        logger.info("Registering recipes...")
         RecipeLoader.loadAllRecipes()
+
+        // Biomes
+        logger.info("Registering biomes...")
+        BiomeLoader.loadBiomes(MinecraftServer.getBiomeManager())
 
         // Load world
         logger.info("Preparing world...")
@@ -73,6 +78,7 @@ class ServerBootstrap {
             logger.info("Enabling metrics...")
             Tracker().reportInfo(serverConfig)
         }
+
 
         // Add global events
         logger.info("Adding server events...")
