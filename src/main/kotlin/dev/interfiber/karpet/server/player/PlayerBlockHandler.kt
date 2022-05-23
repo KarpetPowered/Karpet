@@ -35,6 +35,8 @@ object PlayerBlockHandler {
             if (PlayerBackpack().canMineBlock(Block.IRON_ORE, eventPlayer)){
                 PlayerBackpack().spawnItemStack(Material.RAW_IRON, eventPlayer.position, playerInstance)
             }
+        } else if (blockType == Block.JUNGLE_LOG) {
+            PlayerBackpack().spawnItemStack(Material.JUNGLE_LOG, eventPlayer.position, playerInstance)
         }
         eventPlayer.inventory.update()
     }

@@ -9,12 +9,14 @@ object RecipeLoader {
         val craftingTableRecipe = CraftingTableRecipe()
         val woodenPickaxeRecipe = WoodenPickaxeRecipe()
         val stonePickaxeRecipe = StonePickaxeRecipe()
+        val furnaceRecipe = FurnaceRecipe()
         // Load all recipes
         LoadedRecipes.add(oakPlanksRecipe)
         LoadedRecipes.add(stickRecipe)
         LoadedRecipes.add(craftingTableRecipe)
         LoadedRecipes.add(woodenPickaxeRecipe)
         LoadedRecipes.add(stonePickaxeRecipe)
+        LoadedRecipes.add(furnaceRecipe)
     }
 
     fun getLoadedRecipes(): List<MinecraftRecipe> {

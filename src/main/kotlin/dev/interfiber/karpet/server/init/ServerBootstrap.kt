@@ -7,6 +7,7 @@ import dev.interfiber.karpet.server.config.ConfigUtils
 import dev.interfiber.karpet.server.events.PlayerLeave
 import dev.interfiber.karpet.server.events.PlayerLogin
 import dev.interfiber.karpet.server.recipes.RecipeLoader
+import dev.interfiber.karpet.server.smelting.SmeltingRecipeLoader
 import mu.KotlinLogging
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.player.PlayerDisconnectEvent
@@ -58,6 +59,10 @@ class ServerBootstrap {
         // Load recipes
         logger.info("Registering recipes...")
         RecipeLoader.loadAllRecipes()
+
+        // Load smelting recipes
+        logger.info("Registering smelting recipes...")
+        SmeltingRecipeLoader.loadAllRecipes()
 
         // Biomes
         logger.info("Registering biomes...")

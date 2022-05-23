@@ -1,10 +1,8 @@
 package dev.interfiber.karpet.server.events
 
-import dev.interfiber.karpet.server.player.PlayerBackpack
-import dev.interfiber.karpet.server.player.PlayerBlockHandler
-import dev.interfiber.karpet.server.player.PlayerCraftingHandler
-import dev.interfiber.karpet.server.player.PlayerCraftingTableHandler
+import dev.interfiber.karpet.server.player.*
 import dev.interfiber.karpet.server.recipes.RecipeLoader
+import dev.interfiber.karpet.server.smelting.SmeltingRecipeLoader
 import dev.interfiber.karpet.server.utils.SpawnLocation
 import dev.interfiber.karpet.server.utils.SpawnLocator
 import net.kyori.adventure.text.Component
@@ -18,6 +16,7 @@ import net.minestom.server.event.player.PlayerBlockInteractEvent
 import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.block.Block
+import net.minestom.server.item.Material
 
 
 class PlayerLogin {
@@ -39,6 +38,8 @@ class PlayerLogin {
             val blockType = interactEvent?.block
             if (blockType == Block.CRAFTING_TABLE){
                 PlayerCraftingTableHandler().addCraftingTableHandler(player, RecipeLoader.getLoadedRecipes())
+            } else if (blockType == Block.FURNACE){
+                PlayerSmeltingHandler().addFurnaceEvent(event.player, SmeltingRecipeLoader.getLoadedRecipes())
             }
         }
         player.eventNode().addListener(
