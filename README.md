@@ -2,6 +2,12 @@
 Karpet is a work in progress minestom server written for vanilla
 ![](./minecraft.png)
 
+## Features
+   - Crafting support, with easy support to add recipes
+   - Smelting support, with easy support to add recipes
+   - World loading 
+   - Config files
+
 ## Building
 First install the following
 

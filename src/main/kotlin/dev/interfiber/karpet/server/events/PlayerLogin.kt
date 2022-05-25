@@ -22,9 +22,7 @@ import net.minestom.server.item.Material
 class PlayerLogin {
     fun fireEvent(event: PlayerLoginEvent, instanceContainer: InstanceContainer) {
         val player: Player = event.player
-        if (instanceContainer != null) {
-            event.setSpawningInstance(instanceContainer)
-        }
+        event.setSpawningInstance(instanceContainer)
         // Get spawn location
         val location: SpawnLocation? = SpawnLocator().getSpawnLocation(instanceContainer)
         if (location != null) {

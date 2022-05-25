@@ -43,7 +43,7 @@ class PlayerSmeltingHandler {
         var selectedItems = HashMap<Int, ItemStack>()
         val recipeOutputID = AtomicReference("")
         selectedItems = initAir(selectedItems)
-        smeltingInventory.addInventoryCondition { targetPlayer, slot, clickType, inventoryConditionResult ->
+        smeltingInventory.addInventoryCondition { targetPlayer, slot, _, inventoryConditionResult ->
             if (inventoryConditionResult.cursorItem != ItemStack.AIR){
                 selectedItems[slot] = inventoryConditionResult.cursorItem
             } else {

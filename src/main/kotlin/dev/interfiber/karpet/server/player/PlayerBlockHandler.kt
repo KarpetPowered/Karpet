@@ -37,6 +37,12 @@ object PlayerBlockHandler {
             }
         } else if (blockType == Block.JUNGLE_LOG) {
             PlayerBackpack().spawnItemStack(Material.JUNGLE_LOG, eventPlayer.position, playerInstance)
+        } else if (blockType == Block.SPRUCE_LOG){
+            PlayerBackpack().spawnItemStack(Material.SPRUCE_LOG, eventPlayer.position, playerInstance)
+        } else if (blockType == Block.BIRCH_LOG){
+            PlayerBackpack().spawnItemStack(Material.BIRCH_LOG, eventPlayer.position, playerInstance)
+        } else if (blockType == Block.COAL_ORE){
+            PlayerBackpack().spawnItemStack(Material.COAL, eventPlayer.position, playerInstance)
         }
         eventPlayer.inventory.update()
     }

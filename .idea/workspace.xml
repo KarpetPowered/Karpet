@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="Add basic biomes&#10;Dosent really work :(">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerSmeltingHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/FurnaceRecipe.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/smelting/IronSmeltingRecipe.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/smelting/MinecraftSmeltingRecipe.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/smelting/SmeltingRecipeLoader.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/IronPickaxeRecipe.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBlockHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/InventoryConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/InventoryConstants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerSmeltingHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerSmeltingHandler.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/RecipeLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/RecipeLoader.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
