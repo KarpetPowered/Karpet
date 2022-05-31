@@ -1,11 +1,11 @@
 package dev.interfiber.karpet.server.init
 
 import dev.interfiber.karpet.server.biomes.BiomeLoader
-import dev.interfiber.karpet.server.metrics.Tracker
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
 import dev.interfiber.karpet.server.events.PlayerLeave
 import dev.interfiber.karpet.server.events.PlayerLogin
+import dev.interfiber.karpet.server.metrics.Tracker
 import dev.interfiber.karpet.server.recipes.RecipeLoader
 import dev.interfiber.karpet.server.smelting.SmeltingRecipeLoader
 import mu.KotlinLogging
@@ -15,6 +15,8 @@ import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.event.server.ServerListPingEvent
 import net.minestom.server.extras.MojangAuth
 import net.minestom.server.instance.AnvilLoader
+import net.minestom.server.timer.Scheduler
+import net.minestom.server.timer.TaskSchedule
 import java.io.File
 import java.io.FileWriter
 
@@ -114,6 +116,13 @@ class ServerBootstrap {
                 PlayerLeave().fireEvent(leaveEvent.player)
             }
         }
+        val scheduler: Scheduler = MinecraftServer.getSchedulerManager()
+        scheduler.submitTask {
+            logger.info("Running automatic world save...")
+            instanceContainer.saveChunksToStorage()
+            TaskSchedule.seconds(60)
+        }
+        MinecraftServer.getSchedulerManager().buildShutdownTask(ServerShutdown(instanceContainer))
 
         // Start server
         logger.info("Starting server...")
