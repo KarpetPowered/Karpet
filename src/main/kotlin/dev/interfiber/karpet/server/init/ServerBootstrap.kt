@@ -73,9 +73,6 @@ class ServerBootstrap {
         logger.info("Registering biomes...")
         BiomeLoader.loadBiomes(MinecraftServer.getBiomeManager())
 
-        // Commands
-        logger.info("Registering commands...")
-        MinecraftServer.getCommandManager().register(SaveWorldCommand())
 
         // Load world
         logger.info("Preparing world...")
@@ -93,6 +90,9 @@ class ServerBootstrap {
             Tracker().reportInfo(serverConfig)
         }
 
+        // Commands
+        logger.info("Registering commands...")
+        MinecraftServer.getCommandManager().register(SaveWorldCommand(instanceContainer))
 
         // Add global events
         logger.info("Adding server events...")
