@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="Add basic biomes&#10;Dosent really work :(">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerShutdown.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tinylog.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
