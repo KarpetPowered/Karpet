@@ -1,6 +1,8 @@
 package dev.interfiber.karpet.server.init
 
+import dev.interfiber.karpet.server.WorldSaveThread
 import dev.interfiber.karpet.server.biomes.BiomeLoader
+import dev.interfiber.karpet.server.commands.SaveWorldCommand
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
 import dev.interfiber.karpet.server.events.PlayerLeave
@@ -48,6 +50,7 @@ class ServerBootstrap {
         // Create server
         logger.info("Initializing MinecraftServer...")
         val minecraftServer = MinecraftServer.init()
+        MinecraftServer.setBrandName("Karpet")
         val onlineModeEnable = config?.getTable("server")?.getBoolean("online-mode")
         if (onlineModeEnable == true){
             logger.info("Enabling player authentication...")
@@ -69,6 +72,10 @@ class ServerBootstrap {
         // Biomes
         logger.info("Registering biomes...")
         BiomeLoader.loadBiomes(MinecraftServer.getBiomeManager())
+
+        // Commands
+        logger.info("Registering commands...")
+        MinecraftServer.getCommandManager().register(SaveWorldCommand())
 
         // Load world
         logger.info("Preparing world...")
@@ -119,7 +126,9 @@ class ServerBootstrap {
         val scheduler: Scheduler = MinecraftServer.getSchedulerManager()
         scheduler.submitTask {
             logger.info("Running automatic world save...")
-            instanceContainer.saveChunksToStorage()
+            val worldSaveThread = WorldSaveThread(instanceContainer)
+            val thread = Thread(worldSaveThread)
+            thread.start()
             TaskSchedule.seconds(60)
         }
         MinecraftServer.getSchedulerManager().buildShutdownTask(ServerShutdown(instanceContainer))
