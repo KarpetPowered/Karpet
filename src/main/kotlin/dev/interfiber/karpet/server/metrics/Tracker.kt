@@ -15,7 +15,10 @@ private val logger = KotlinLogging.logger {}
 
 class Tracker {
     private val pluginID = 15250
-
+    /**
+     * Append platform info for the current system to a JsonObjectBuilder
+     * @param builder The JsonObjectBuilder to append to
+     */
     private fun appendPlatformInfo(builder: JsonObjectBuilder) {
         builder.appendField("osName", System.getProperty("os.name"));
         builder.appendField("osArch", System.getProperty("os.arch"));
@@ -23,6 +26,10 @@ class Tracker {
         builder.appendField("coreCount", Runtime.getRuntime().availableProcessors());
     }
 
+    /**
+     * Report the server info
+     * @param serverConfig The servers parsed config
+     */
     fun reportInfo(serverConfig: Toml) {
         val serverUUID = ConfigUtils().getServerUUID()
         val metrics = MetricsBase(

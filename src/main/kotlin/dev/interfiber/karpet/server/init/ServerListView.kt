@@ -14,6 +14,8 @@ class ServerListView {
     /**
      * Handles the server list ping packet
      * Sends basic server info such as MOTD, and players
+     * @param pingEvent The ServerListPingEvent
+     * @param config The parsed server config
      */
     fun serverPingHandler(pingEvent: ServerListPingEvent, config: Toml?){
         val serverConfig = config?.getTable("server");

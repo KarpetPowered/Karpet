@@ -12,6 +12,7 @@ class SpawnLocator {
     /**
      * Return the world spawn point
      * @author Interfiber
+     * @param instance InstanceContainer to get the spawn location for
      */
     fun getSpawnLocation(instance: InstanceContainer): SpawnLocation? {
         val compound = instance.getTag(Tag.NBT("Data")) as NBTCompound

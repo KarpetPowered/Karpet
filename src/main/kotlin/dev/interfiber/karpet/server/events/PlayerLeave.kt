@@ -12,6 +12,7 @@ import net.minestom.server.entity.Player
 class PlayerLeave {
     /**
      * Fire the event
+     * @param player The player that left
      * @author Interfiber
      */
     fun fireEvent(player: Player){

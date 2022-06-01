@@ -12,6 +12,7 @@ import net.minestom.server.utils.time.TimeUnit
 
 /**
  * Zombie entity
+ * @param stats The EntityStats to use for the zombie
  * @author Interfiber
  */
 class ZombieCreature(stats: EntityStats) : MinecraftEntity(EntityType.ZOMBIE, stats){

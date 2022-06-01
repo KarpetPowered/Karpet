@@ -4,11 +4,14 @@ import net.minestom.server.world.biomes.BiomeManager
 
 /**
  * Registers all biomes on server startup
- * @param manager BiomeManager to register biomes for
  * @author Interfiber
  */
 object BiomeLoader {
-
+    /**
+     * Load all biomes into memory
+     * @param manager BiomeManager to register biomes for
+     * @author Interfiber
+     */
     fun loadBiomes(manager: BiomeManager){
         val swampBiome = SwampBiome()
         val jungleBiome = JungleBiome()

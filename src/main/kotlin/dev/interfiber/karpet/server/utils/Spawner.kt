@@ -15,6 +15,9 @@ class Spawner {
     var stats: EntityStats? = null
     /**
      * Spawn an entity in at a position
+     * @param Type Type of the entity to spawn
+     * @param Position Position in 3D space to spawn the entity at
+     * @param SpawnInstance Instance to spawn the entity in
      * @author Interfiber
      */
     fun spawnEntity(Type: EntityType, Position: Pos?, SpawnInstance: InstanceContainer?) {

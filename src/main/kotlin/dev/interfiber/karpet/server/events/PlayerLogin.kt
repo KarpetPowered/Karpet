@@ -20,13 +20,14 @@ import net.minestom.server.item.Material
 
 
 /**
- * Player login event, called when a player connects to the server
- * This sets up respawn point, and events
+ * Player login event, called when a player connects to the server, this also sets up respawn point, and events
  * @author Interfiber
  */
 class PlayerLogin {
     /**
      * Fire the event
+     * @param event The player login event
+     * @param instanceContainer The instance to spawn the player in
      * @author Interfiber
      */
     fun fireEvent(event: PlayerLoginEvent, instanceContainer: InstanceContainer) {

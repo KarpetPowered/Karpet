@@ -7,11 +7,27 @@ import net.minestom.server.item.ItemStack
  * @author Interfiber
  */
 open class MinecraftRecipe {
+    /**
+     * A unique id to represent the recipe
+     * @author Interfiber
+     */
     var recipeID: String? = null
-    var portableItems // List of items used to craft the item in the portable table
+    /**
+     * List of items used to craft the item in the portable table
+     * @author Interfiber
+     */
+    var portableItems
             : List<ItemStack>? = null
-    var items // List of items used to craft the item in the crafting table
+    /**
+     * List of items used to craft the item in the crafting table
+     * @author Interfiber
+     */
+    var items
         : List<ItemStack>? = null
+    /**
+     * The output of the crafting recipe
+     * @author Interfiber
+     */
     var result: ItemStack? = null
 //    fun CanCraft(player: Player?): Boolean {
 //        return false

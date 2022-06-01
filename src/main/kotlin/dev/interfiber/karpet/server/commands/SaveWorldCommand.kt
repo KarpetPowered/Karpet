@@ -10,6 +10,7 @@ import net.minestom.server.instance.InstanceContainer
 /**
  * Server save world command
  * Triggers an on-demand world save
+ * @param instance The instance to save
  * @author Interfiber
  */
 
