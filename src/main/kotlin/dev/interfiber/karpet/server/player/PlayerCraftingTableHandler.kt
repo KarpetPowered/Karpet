@@ -80,7 +80,7 @@ class PlayerCraftingTableHandler {
                 logger.info(player.username + " crafted a $recipeOutputID")
                 return@addInventoryCondition
             }
-            if (indexCraft(slot) && craftClick(clickType)) {
+            if (indexCraft(slot)) {
                 // Get the current clicked item
                 val cursorItem = inventoryConditionResult.cursorItem
                 if (cursorItem.isAir) {

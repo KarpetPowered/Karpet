@@ -23,14 +23,6 @@ class PlayerCraftingHandler {
     private fun indexCraft(index: Int): Boolean {
         return index == InventoryConstants.PortableInventorySlot1 || index == InventoryConstants.PortableInventorySlot2 || index == InventoryConstants.PortableInventorySlot3 || index == InventoryConstants.PortableInventorySlot4
     }
-    /**
-     * Check if a click type is accepted in the crafting table
-     * @author Interfiber
-     */
-
-    private fun craftClick(Type: ClickType): Boolean {
-        return Type == ClickType.RIGHT_CLICK || Type == ClickType.LEFT_CLICK || Type == ClickType.RIGHT_DRAGGING || Type == ClickType.LEFT_DRAGGING
-    }
 
     /**
      * Called when a player opens their portable crafting grid
@@ -63,7 +55,7 @@ class PlayerCraftingHandler {
                 logger.info(player.username + " crafted a $recipeOutputID")
                 return@addInventoryCondition
             }
-            if (indexCraft(slot) && craftClick(clickType)) {
+            if (indexCraft(slot)) {
                 // Get the current clicked item
                 val cursorItem = inventoryConditionResult.cursorItem
                 if (cursorItem.isAir) {
