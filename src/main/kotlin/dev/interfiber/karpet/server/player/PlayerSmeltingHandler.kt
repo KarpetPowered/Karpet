@@ -14,19 +14,33 @@ import java.util.concurrent.atomic.AtomicReference
 
 private val logger = KotlinLogging.logger {}
 
-
+/**
+ * Handle player smelting with a furnace
+ * @author Interfiber
+ */
 class PlayerSmeltingHandler {
 
+    /**
+     * Fill an entire HashMap with air
+     * @author Interfiber
+     */
     private fun initAir(selectedItems: HashMap<Int, ItemStack>): HashMap<Int, ItemStack> {
         selectedItems[InventoryConstants.SmeltingFuelSlot] = ItemStack.AIR
         selectedItems[InventoryConstants.SmeltingInputSlot] = ItemStack.AIR
         selectedItems[InventoryConstants.SmeltingOutputSlot] = ItemStack.AIR
         return selectedItems
     }
+    /**
+     * Player a sound to the given player
+     * @author Interfiber
+     */
     private fun playSound(player: Player, sound: String?, source: String?, volume: Float, pitch: Float) {
         player.playSound(Sound.sound(Key.key(sound!!), Sound.Source.valueOf(source!!), volume, pitch))
     }
-
+    /**
+     * Check if an item is a valid fuel
+     * @author Interfiber
+     */
     private fun fuelAccept(fuel: ItemStack): Boolean {
         val type = fuel.material()
         return if (type == Material.COAL){
@@ -37,7 +51,10 @@ class PlayerSmeltingHandler {
             false
         }
     }
-
+    /**
+     * Called when a player opens the furnace
+     * @author Interfiber
+     */
     fun addFurnaceEvent(player: Player, recipes: List<MinecraftSmeltingRecipe>){
         val smeltingInventory = Inventory(InventoryType.FURNACE, "Smelting")
         var selectedItems = HashMap<Int, ItemStack>()

@@ -3,6 +3,10 @@ package dev.interfiber.karpet.server.recipes
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
 
+/**
+ * Recipe to craft oak planks
+ * @author Interfiber
+ */
 class OakPlanksRecipe : MinecraftRecipe() {
     init {
         this.recipeID = "oak_planks"

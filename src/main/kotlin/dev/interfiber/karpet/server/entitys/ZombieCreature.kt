@@ -10,6 +10,10 @@ import net.minestom.server.entity.damage.DamageType
 import net.minestom.server.event.entity.EntityAttackEvent
 import net.minestom.server.utils.time.TimeUnit
 
+/**
+ * Zombie entity
+ * @author Interfiber
+ */
 class ZombieCreature(stats: EntityStats) : MinecraftEntity(EntityType.ZOMBIE, stats){
     init {
         addAIGroup(

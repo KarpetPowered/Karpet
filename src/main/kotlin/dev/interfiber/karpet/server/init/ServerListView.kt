@@ -11,6 +11,10 @@ private val logger = KotlinLogging.logger {}
 
 
 class ServerListView {
+    /**
+     * Handles the server list ping packet
+     * Sends basic server info such as MOTD, and players
+     */
     fun serverPingHandler(pingEvent: ServerListPingEvent, config: Toml?){
         val serverConfig = config?.getTable("server");
 

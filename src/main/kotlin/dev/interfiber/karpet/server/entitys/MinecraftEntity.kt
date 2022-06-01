@@ -5,8 +5,8 @@ import net.minestom.server.entity.EntityCreature
 import net.minestom.server.entity.EntityType
 
 /**
- *
- * @author persephone
+ * Represents a entity in minecraft
+ * @author Interfiber
  */
 open class MinecraftEntity(entityType: EntityType?, stats: EntityStats) : EntityCreature(entityType!!) {
     init {

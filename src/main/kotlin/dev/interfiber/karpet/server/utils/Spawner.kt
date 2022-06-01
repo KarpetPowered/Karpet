@@ -8,11 +8,15 @@ import net.minestom.server.entity.EntityType
 import net.minestom.server.instance.InstanceContainer
 
 /**
- *
- * @author persephone
+ * Entity spawner(not the block)
+ * @author Interfiber
  */
 class Spawner {
     var stats: EntityStats? = null
+    /**
+     * Spawn an entity in at a position
+     * @author Interfiber
+     */
     fun spawnEntity(Type: EntityType, Position: Pos?, SpawnInstance: InstanceContainer?) {
         var entityToSpawn: Entity? = null
         if (Type === EntityType.ZOMBIE) {

@@ -2,7 +2,10 @@ package dev.interfiber.karpet.server.recipes
 
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
-
+/**
+ * Recipe to craft a furnace
+ * @author Interfiber
+ */
 class FurnaceRecipe : MinecraftRecipe() {
     init {
         this.recipeID = "furnace"

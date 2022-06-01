@@ -3,6 +3,10 @@ package dev.interfiber.karpet.server.recipes
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
 
+/**
+ * Recipe to craft a crafting table
+ * @author Interfiber
+ */
 class CraftingTableRecipe : MinecraftRecipe() {
     init {
         this.recipeID = "crafting_table"

@@ -2,6 +2,10 @@ package dev.interfiber.karpet.server.recipes
 
 import net.minestom.server.item.ItemStack
 
+/**
+ * Represent a craftable recipe
+ * @author Interfiber
+ */
 open class MinecraftRecipe {
     var recipeID: String? = null
     var portableItems // List of items used to craft the item in the portable table

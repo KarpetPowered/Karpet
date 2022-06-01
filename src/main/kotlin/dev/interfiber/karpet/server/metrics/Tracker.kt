@@ -8,6 +8,11 @@ import org.bstats.json.JsonObjectBuilder
 
 private val logger = KotlinLogging.logger {}
 
+/**
+ * BStats metrics sender
+ * @author Interfiber
+ */
+
 class Tracker {
     private val pluginID = 15250
 

@@ -7,6 +7,12 @@ import net.minestom.server.command.builder.CommandContext
 import net.minestom.server.command.builder.CommandExecutor
 import net.minestom.server.instance.InstanceContainer
 
+/**
+ * Server save world command
+ * Triggers an on-demand world save
+ * @author Interfiber
+ */
+
 class SaveWorldCommand(instance: InstanceContainer) : Command("saveworld", "sw") {
     init {
 

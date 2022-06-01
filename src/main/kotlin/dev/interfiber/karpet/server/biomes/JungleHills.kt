@@ -4,6 +4,10 @@ import net.minestom.server.world.biomes.BiomeEffects
 import org.jglrxavpok.hephaistos.mcdata.Biome
 import java.awt.Color
 
+/**
+ * Jungle hills biome
+ * @author Interfiber
+ */
 class JungleHills : MinecraftBiome() {
     init {
         this.biomeID = "jungle_hills"

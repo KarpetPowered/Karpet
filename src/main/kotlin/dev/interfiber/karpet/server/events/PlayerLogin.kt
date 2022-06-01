@@ -19,7 +19,16 @@ import net.minestom.server.instance.block.Block
 import net.minestom.server.item.Material
 
 
+/**
+ * Player login event, called when a player connects to the server
+ * This sets up respawn point, and events
+ * @author Interfiber
+ */
 class PlayerLogin {
+    /**
+     * Fire the event
+     * @author Interfiber
+     */
     fun fireEvent(event: PlayerLoginEvent, instanceContainer: InstanceContainer) {
         val player: Player = event.player
         event.setSpawningInstance(instanceContainer)

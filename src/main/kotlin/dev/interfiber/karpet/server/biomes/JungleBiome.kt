@@ -2,6 +2,10 @@ package dev.interfiber.karpet.server.biomes
 
 import net.minestom.server.world.biomes.BiomeEffects
 
+/**
+ * Jungle Biome
+ * @author Interfiber
+ */
 class JungleBiome : MinecraftBiome() {
     init {
         this.biomeID = "jungle"

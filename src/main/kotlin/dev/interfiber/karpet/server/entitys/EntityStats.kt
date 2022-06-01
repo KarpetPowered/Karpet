@@ -1,8 +1,8 @@
 package dev.interfiber.karpet.server.entitys
 
 /**
- *
- * @author persephone
+ * Represents an entitys base statistics, such as attack damage and max health
+ * @author Interfiber
  */
 class EntityStats {
     var attackDamage = 0

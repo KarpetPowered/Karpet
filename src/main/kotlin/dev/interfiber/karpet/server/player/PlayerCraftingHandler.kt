@@ -10,14 +10,32 @@ import mu.KotlinLogging
 private val logger = KotlinLogging.logger {}
 
 
+/**
+ * Handle player crafting
+ * The entire portable player crafting system written from the ground up
+ * @author Interfiber
+ */
 class PlayerCraftingHandler {
+    /**
+     * Check if a slot id is in the crafting grid
+     * @author Interfiber
+     */
     private fun indexCraft(index: Int): Boolean {
         return index == InventoryConstants.PortableInventorySlot1 || index == InventoryConstants.PortableInventorySlot2 || index == InventoryConstants.PortableInventorySlot3 || index == InventoryConstants.PortableInventorySlot4
     }
+    /**
+     * Check if a click type is accepted in the crafting table
+     * @author Interfiber
+     */
 
     private fun craftClick(Type: ClickType): Boolean {
         return Type == ClickType.RIGHT_CLICK || Type == ClickType.LEFT_CLICK || Type == ClickType.RIGHT_DRAGGING || Type == ClickType.LEFT_DRAGGING
     }
+
+    /**
+     * Called when a player opens their portable crafting grid
+     * @author Interfiber
+     */
 
     fun addCraftEvent(player: Player, Recipes: List<MinecraftRecipe>) {
         val selectedItems = HashMap<Int, ItemStack>()

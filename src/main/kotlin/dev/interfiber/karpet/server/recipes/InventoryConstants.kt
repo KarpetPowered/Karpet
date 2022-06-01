@@ -1,5 +1,9 @@
 package dev.interfiber.karpet.server.recipes
 
+/**
+ * Global constants for inventory slots
+ * @author Interfiber
+ */
 object InventoryConstants {
     // Portable inventory slot ids
     const val PortableInventorySlot1 = 37

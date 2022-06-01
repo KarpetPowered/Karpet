@@ -4,6 +4,10 @@ import net.minestom.server.world.biomes.BiomeEffects
 import org.jglrxavpok.hephaistos.mcdata.Biome
 import java.awt.Color
 
+/**
+ * Sparse Jungle biome
+ * @author Interfiber
+ */
 class SparseJungle : MinecraftBiome() {
     init {
         this.biomeID = "sparse_jungle"

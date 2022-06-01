@@ -7,10 +7,14 @@ import net.minestom.server.instance.block.Block
 import net.minestom.server.item.Material
 
 /**
- *
- * @author persephone
+ * Handles block breaking for a player
+ * @author Interfiber
  */
 object PlayerBlockHandler {
+    /**
+     * Called when a player breaks a block
+     * @author Interfiber
+     */
     fun breakBlockHandler(BreakBlockEvent: PlayerBlockBreakEvent) {
         val eventPlayer = BreakBlockEvent.player
         val playerInstance = eventPlayer.instance as InstanceContainer?

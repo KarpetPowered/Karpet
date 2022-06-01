@@ -3,6 +3,10 @@ package dev.interfiber.karpet.server.recipes
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
 
+/**
+ * Recipe to craft a stone pickaxe
+ * @author Interfiber
+ */
 class StonePickaxeRecipe : MinecraftRecipe() {
     init {
         this.recipeID = "stone_pickaxe"

@@ -2,6 +2,11 @@ package dev.interfiber.karpet.server.biomes
 
 import net.minestom.server.world.biomes.BiomeManager
 
+/**
+ * Registers all biomes on server startup
+ * @param manager BiomeManager to register biomes for
+ * @author Interfiber
+ */
 object BiomeLoader {
 
     fun loadBiomes(manager: BiomeManager){

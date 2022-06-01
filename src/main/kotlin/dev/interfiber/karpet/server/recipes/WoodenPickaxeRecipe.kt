@@ -3,6 +3,10 @@ package dev.interfiber.karpet.server.recipes
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
 
+/**
+ * Recipe to craft a wooden pickaxe
+ * @author Interfiber
+ */
 class WoodenPickaxeRecipe : MinecraftRecipe() {
     init {
         this.recipeID = "wooden_pickaxe"

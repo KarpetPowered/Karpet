@@ -4,8 +4,15 @@ import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.tag.Tag
 import org.jglrxavpok.hephaistos.nbt.NBTCompound
 
-
+/**
+ * Find the world spawn point
+ * @author Interfiber
+ */
 class SpawnLocator {
+    /**
+     * Return the world spawn point
+     * @author Interfiber
+     */
     fun getSpawnLocation(instance: InstanceContainer): SpawnLocation? {
         val compound = instance.getTag(Tag.NBT("Data")) as NBTCompound
         val spawnX = compound.getInt("SpawnX")

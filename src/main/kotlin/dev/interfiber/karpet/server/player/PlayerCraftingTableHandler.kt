@@ -14,15 +14,30 @@ import java.util.concurrent.atomic.AtomicReference
 
 private val logger = KotlinLogging.logger {}
 
-
+/**
+ * Player crafting table crafting system
+ * @author Interfiber
+ */
 class PlayerCraftingTableHandler {
+    /**
+     * Check if a slot id is in the crafting grid
+     * @author Interfiber
+     */
     private fun indexCraft(index: Int): Boolean {
         return index == InventoryConstants.CraftingInventorySlot1 || index == InventoryConstants.CraftingInventorySlot2 || index == InventoryConstants.CraftingInventorySlot3 || index == InventoryConstants.CraftingInventorySlot4 || index == InventoryConstants.CraftingInventorySlot5 || index == InventoryConstants.CraftingInventorySlot6 || index == InventoryConstants.CraftingInventorySlot7 || index == InventoryConstants.CraftingInventorySlot8 || index == InventoryConstants.CraftingInventorySlot9
     }
+    /**
+     * Check if a click type is accepted in the crafting grid
+     * @author Interfiber
+     */
 
     private fun craftClick(Type: ClickType): Boolean {
         return Type == ClickType.RIGHT_CLICK || Type == ClickType.LEFT_CLICK || Type == ClickType.RIGHT_DRAGGING || Type == ClickType.LEFT_DRAGGING
     }
+    /**
+     * Fill an entire Hashmap with air
+     * @author Interfiber
+     */
     private fun initAir(selectedItems: HashMap<Int, ItemStack>): HashMap<Int, ItemStack> {
         selectedItems[InventoryConstants.CraftingInventorySlot1] = ItemStack.AIR
         selectedItems[InventoryConstants.CraftingInventorySlot2] = ItemStack.AIR
@@ -35,6 +50,10 @@ class PlayerCraftingTableHandler {
         selectedItems[InventoryConstants.CraftingInventorySlot9] = ItemStack.AIR
         return selectedItems
     }
+    /**
+     * Called when a player opens a crafting table
+     * @author Interfiber
+     */
     fun addCraftingTableHandler(player: Player, Recipes: List<MinecraftRecipe>) {
         val craftingTableInventory = Inventory(InventoryType.CRAFTING, "Crafting Table")
         var selectedItems = HashMap<Int, ItemStack>()

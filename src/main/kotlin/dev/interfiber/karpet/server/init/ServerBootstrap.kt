@@ -25,7 +25,15 @@ import java.io.FileWriter
 
 private val logger = KotlinLogging.logger {}
 
+/**
+ * Server bootstrapped
+ * @author Interfiber
+ */
 class ServerBootstrap {
+    /**
+     * Starts the karpet server
+     * Registers biomes, commands, recipes, and loads the world
+     */
     fun startServer(){
         // Check for config file
         logger.info("Checking for config file...")
