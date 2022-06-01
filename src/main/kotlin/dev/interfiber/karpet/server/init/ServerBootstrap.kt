@@ -2,6 +2,8 @@ package dev.interfiber.karpet.server.init
 
 import dev.interfiber.karpet.server.WorldSaveThread
 import dev.interfiber.karpet.server.biomes.BiomeLoader
+import dev.interfiber.karpet.server.commands.GiveItemCommand
+import dev.interfiber.karpet.server.commands.GivePermissonCommand
 import dev.interfiber.karpet.server.commands.SaveWorldCommand
 import dev.interfiber.karpet.server.config.ConfigLoader
 import dev.interfiber.karpet.server.config.ConfigUtils
@@ -101,6 +103,8 @@ class ServerBootstrap {
         // Commands
         logger.info("Registering commands...")
         MinecraftServer.getCommandManager().register(SaveWorldCommand(instanceContainer))
+        MinecraftServer.getCommandManager().register(GivePermissonCommand())
+        MinecraftServer.getCommandManager().register(GiveItemCommand())
 
         // Add global events
         logger.info("Adding server events...")
@@ -137,7 +141,7 @@ class ServerBootstrap {
             val worldSaveThread = WorldSaveThread(instanceContainer)
             val thread = Thread(worldSaveThread)
             thread.start()
-            TaskSchedule.seconds(60)
+            TaskSchedule.minutes(2)
         }
         MinecraftServer.getSchedulerManager().buildShutdownTask(ServerShutdown(instanceContainer))
 

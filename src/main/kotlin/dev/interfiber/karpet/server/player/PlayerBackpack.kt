@@ -18,11 +18,9 @@ class PlayerBackpack {
      * Spawn a stack of items
      * @author Interfiber
      */
-    fun spawnItemStack(Type: Material?, Position: Pos?, Container: InstanceContainer?) {
+    fun spawnItemStack(Type: Material?, Position: Pos, Container: InstanceContainer?) {
         val item = ItemEntity(ItemStack.of(Type!!))
-        if (Position != null) {
-            item.setInstance(Container!!, Position)
-        }
+        item.setInstance(Container!!, Position)
     }
     /**
      * Called when a player picks up an item

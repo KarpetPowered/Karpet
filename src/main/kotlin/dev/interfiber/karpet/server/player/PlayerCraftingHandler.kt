@@ -36,7 +36,7 @@ class PlayerCraftingHandler {
         selectedItems[InventoryConstants.PortableInventorySlot3] = ItemStack.AIR
         selectedItems[InventoryConstants.PortableInventorySlot4] = ItemStack.AIR
         val recipeOutputID = AtomicReference("")
-        player.inventory.addInventoryCondition { targetPlayer: Player, slot: Int, clickType: ClickType, inventoryConditionResult: InventoryConditionResult ->
+        player.inventory.addInventoryCondition { targetPlayer: Player, slot: Int, _: ClickType, inventoryConditionResult: InventoryConditionResult ->
             if (slot == InventoryConstants.PortableInventoryOutputSlot && recipeOutputID.get() != null) {
                 // Clear memory of crafting
                 selectedItems.clear()

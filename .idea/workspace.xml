@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e24c99a-30eb-4818-9900-295f53b69e5b" name="Changes" comment="Add basic biomes&#10;Dosent really work :(">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/commands/GiveItemCommand.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/commands/GivePermissonCommand.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/biomes/BiomeLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/biomes/BiomeLoader.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/commands/SaveWorldCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/commands/SaveWorldCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/entitys/ZombieCreature.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/entitys/ZombieCreature.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLeave.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLeave.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/events/PlayerLogin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerListView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/metrics/Tracker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/metrics/Tracker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/MinecraftRecipe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/recipes/MinecraftRecipe.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/SpawnLocation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/SpawnLocation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/SpawnLocator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/SpawnLocator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/Spawner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/utils/Spawner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/init/ServerBootstrap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBackpack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerBackpack.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingTableHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerCraftingTableHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerSmeltingHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/interfiber/karpet/server/player/PlayerSmeltingHandler.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,16 +80,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/persephone/repos/Karpet&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/home/persephone/repos/Karpet",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="dev.interfiber.karpet.server.player" />

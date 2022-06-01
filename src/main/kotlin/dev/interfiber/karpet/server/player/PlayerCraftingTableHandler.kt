@@ -59,7 +59,7 @@ class PlayerCraftingTableHandler {
         var selectedItems = HashMap<Int, ItemStack>()
         selectedItems = initAir(selectedItems)
         val recipeOutputID = AtomicReference("")
-        craftingTableInventory.addInventoryCondition { _: Player, slot: Int, clickType: ClickType, inventoryConditionResult: InventoryConditionResult ->
+        craftingTableInventory.addInventoryCondition { _: Player, slot: Int, _: ClickType, inventoryConditionResult: InventoryConditionResult ->
             if (slot == InventoryConstants.CraftingInventoryOutputSlot && recipeOutputID.get() != null) {
                 // Clear memory of crafting
                 selectedItems.clear()
