@@ -8,6 +8,10 @@ Karpet is a work in progress minestom server written for vanilla
    - World loading 
    - Config files
 
+## Links
+   - [Website](https://karpet.interfiber.dev)
+   - [Javadocs](https://karpet.interfiber.dev/javadocs/)
+
 ## Building
 First install the following
 
@@ -27,5 +31,5 @@ gradle shadowJar
 ```
 Then run it with java:
 ```shell
-java -jar build/libs/*.jar
+java -jar build/libs/*-all.jar
 ```
