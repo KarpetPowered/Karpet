@@ -22,6 +22,6 @@ object InventoryConstants {
     const val CraftingInventorySlot9 = 9
     const val CraftingInventoryOutputSlot = 0
     const val SmeltingInputSlot = 0
-    const val SmeltingFuelSlot =  1
+    const val SmeltingFuelSlot = 1
     const val SmeltingOutputSlot = 2
 }

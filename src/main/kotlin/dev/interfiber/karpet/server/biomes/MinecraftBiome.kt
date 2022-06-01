@@ -17,7 +17,7 @@ open class MinecraftBiome {
      * @return Int
      * @author Interfiber
      */
-    fun stringToColor(color: String) : Int {
+    fun stringToColor(color: String): Int {
         return Integer.parseInt(color.replaceFirst("#", ""), 16)
     }
     /**
@@ -30,6 +30,6 @@ open class MinecraftBiome {
         return Biome.builder()
             .effects(this.effects)
             .name(biomeID?.let { NamespaceID.from(it) })
-            .build();
+            .build()
     }
 }

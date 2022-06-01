@@ -24,7 +24,6 @@ import net.minestom.server.timer.TaskSchedule
 import java.io.File
 import java.io.FileWriter
 
-
 private val logger = KotlinLogging.logger {}
 
 /**
@@ -36,10 +35,10 @@ class ServerBootstrap {
      * Starts the karpet server
      * Registers biomes, commands, recipes, and loads the world
      */
-    fun startServer(){
+    fun startServer() {
         // Check for config file
         logger.info("Checking for config file...")
-        val configData: String = if (!File("karpet.toml").exists()){
+        val configData: String = if (!File("karpet.toml").exists()) {
             logger.info("Creating server UUID...")
             val writer = FileWriter(".karpetuuid")
             writer.write(ConfigUtils().generateServerUUID())
@@ -62,9 +61,9 @@ class ServerBootstrap {
         val minecraftServer = MinecraftServer.init()
         MinecraftServer.setBrandName("Karpet")
         val onlineModeEnable = config?.getTable("server")?.getBoolean("online-mode")
-        if (onlineModeEnable == true){
+        if (onlineModeEnable == true) {
             logger.info("Enabling player authentication...")
-            MojangAuth.init();
+            MojangAuth.init()
         } else {
             logger.warn("Player authentication is disabled, this can allow players to play")
             logger.warn("on the server without an account, or force their username to anything")
@@ -83,7 +82,6 @@ class ServerBootstrap {
         logger.info("Registering biomes...")
         BiomeLoader.loadBiomes(MinecraftServer.getBiomeManager())
 
-
         // Load world
         logger.info("Preparing world...")
 
@@ -92,10 +90,9 @@ class ServerBootstrap {
         instanceContainer.chunkLoader = AnvilLoader("world")
         val globalEventHandler = MinecraftServer.getGlobalEventHandler()
 
-
         // Metrics
         val serverConfig = config?.getTable("server")
-        if (serverConfig?.getBoolean("enable-bstats") == true){
+        if (serverConfig?.getBoolean("enable-bstats") == true) {
             logger.info("Enabling metrics...")
             Tracker().reportInfo(serverConfig)
         }
@@ -113,7 +110,7 @@ class ServerBootstrap {
         ) { event: PlayerLoginEvent? ->
             if (event != null) {
                 // check max players
-                if (MinecraftServer.getConnectionManager().onlinePlayers.size > maxPlayers!!){
+                if (MinecraftServer.getConnectionManager().onlinePlayers.size > maxPlayers!!) {
                     logger.warn("Kicking player " + event.player.username + ", due to player limit")
                     event.player.kick("Server is full, please connect at a later time")
                 } else {

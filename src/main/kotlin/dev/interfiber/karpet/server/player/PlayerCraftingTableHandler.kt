@@ -11,7 +11,6 @@ import net.minestom.server.inventory.condition.InventoryConditionResult
 import net.minestom.server.item.ItemStack
 import java.util.concurrent.atomic.AtomicReference
 
-
 private val logger = KotlinLogging.logger {}
 
 /**

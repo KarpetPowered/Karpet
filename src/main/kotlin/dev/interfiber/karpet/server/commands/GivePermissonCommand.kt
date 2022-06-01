@@ -19,16 +19,15 @@ class GivePermissonCommand() : Command("givepermission", "grantpermission", "giv
         defaultExecutor =
             CommandExecutor { sender: CommandSender, _: CommandContext? ->
 
-                if (sender.hasPermission("karpet.commands.permission.manage")){
-
+                if (sender.hasPermission("karpet.commands.permission.manage")) {
                 } else {
                     sender.sendMessage("[KARPET] Failed to run permission update! Insufficient permissions")
                 }
             }
         val playerName = ArgumentType.String("player-name")
-        val permission = ArgumentType.String("permission");
-        val remove = ArgumentType.Boolean("remove");
-        addSyntax({ sender: CommandSender, context: CommandContext  ->
+        val permission = ArgumentType.String("permission")
+        val remove = ArgumentType.Boolean("remove")
+        addSyntax({ sender: CommandSender, context: CommandContext ->
             val player: String = context.get(playerName)
             val perm: String = context.get(permission)
             val shouldRemove: Boolean = context.get(remove)

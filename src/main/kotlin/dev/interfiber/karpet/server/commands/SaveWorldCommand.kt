@@ -20,7 +20,7 @@ class SaveWorldCommand(instance: InstanceContainer) : Command("saveworld", "sw")
         // Executed if no other executor can be used
         defaultExecutor =
             CommandExecutor { sender: CommandSender, _: CommandContext? ->
-                if (sender.hasPermission("karpet.commands.world.ondemandsave")){
+                if (sender.hasPermission("karpet.commands.world.ondemandsave")) {
                     sender.sendMessage("[KARPET] Running on-demand world save, will not report when done")
                     val worldSaveThread = WorldSaveThread(instance)
                     val thread = Thread(worldSaveThread)

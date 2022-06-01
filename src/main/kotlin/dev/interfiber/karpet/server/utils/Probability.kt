@@ -1,6 +1,6 @@
 package dev.interfiber.karpet.server.utils
 
-import java.util.*
+import java.util.Random
 
 /**
  * Calculate probability

@@ -6,7 +6,6 @@ import net.minestom.server.instance.InstanceContainer
 
 private val logger = KotlinLogging.logger {}
 
-
 /**
  * Server shutdown handler
  * Saves servers world & shutsdown the server
@@ -25,5 +24,4 @@ class ServerShutdown(container: InstanceContainer) : Runnable {
         instance.sendMessage(Component.text("[KARPET] Final world save complete, allow server to shutdown"))
         logger.info("Shutting down server...")
     }
-
 }

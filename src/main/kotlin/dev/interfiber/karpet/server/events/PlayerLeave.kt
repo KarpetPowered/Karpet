@@ -15,7 +15,7 @@ class PlayerLeave {
      * @param player The player that left
      * @author Interfiber
      */
-    fun fireEvent(player: Player){
+    fun fireEvent(player: Player) {
         Audiences.all().sendMessage(
             Component.text(
                 player.username + " left the game",

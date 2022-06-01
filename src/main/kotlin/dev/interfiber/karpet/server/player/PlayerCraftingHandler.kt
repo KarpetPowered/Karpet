@@ -1,14 +1,13 @@
 package dev.interfiber.karpet.server.player
 import dev.interfiber.karpet.server.recipes.InventoryConstants
 import dev.interfiber.karpet.server.recipes.MinecraftRecipe
+import mu.KotlinLogging
 import net.minestom.server.entity.Player
 import net.minestom.server.inventory.click.ClickType
 import net.minestom.server.inventory.condition.InventoryConditionResult
 import net.minestom.server.item.ItemStack
 import java.util.concurrent.atomic.AtomicReference
-import mu.KotlinLogging
 private val logger = KotlinLogging.logger {}
-
 
 /**
  * Handle player crafting

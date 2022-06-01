@@ -1,6 +1,10 @@
 package dev.interfiber.karpet.server.events
 
-import dev.interfiber.karpet.server.player.*
+import dev.interfiber.karpet.server.player.PlayerBackpack
+import dev.interfiber.karpet.server.player.PlayerBlockHandler
+import dev.interfiber.karpet.server.player.PlayerCraftingHandler
+import dev.interfiber.karpet.server.player.PlayerCraftingTableHandler
+import dev.interfiber.karpet.server.player.PlayerSmeltingHandler
 import dev.interfiber.karpet.server.recipes.RecipeLoader
 import dev.interfiber.karpet.server.smelting.SmeltingRecipeLoader
 import dev.interfiber.karpet.server.utils.SpawnLocation
@@ -16,8 +20,6 @@ import net.minestom.server.event.player.PlayerBlockInteractEvent
 import net.minestom.server.event.player.PlayerLoginEvent
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.block.Block
-import net.minestom.server.item.Material
-
 
 /**
  * Player login event, called when a player connects to the server, this also sets up respawn point, and events
@@ -44,9 +46,9 @@ class PlayerLogin {
             PlayerBlockInteractEvent::class.java
         ) { interactEvent: PlayerBlockInteractEvent? ->
             val blockType = interactEvent?.block
-            if (blockType == Block.CRAFTING_TABLE){
+            if (blockType == Block.CRAFTING_TABLE) {
                 PlayerCraftingTableHandler().addCraftingTableHandler(player, RecipeLoader.getLoadedRecipes())
-            } else if (blockType == Block.FURNACE){
+            } else if (blockType == Block.FURNACE) {
                 PlayerSmeltingHandler().addFurnaceEvent(event.player, SmeltingRecipeLoader.getLoadedRecipes())
             }
         }

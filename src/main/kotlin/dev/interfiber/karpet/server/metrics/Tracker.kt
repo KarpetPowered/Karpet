@@ -20,10 +20,10 @@ class Tracker {
      * @param builder The JsonObjectBuilder to append to
      */
     private fun appendPlatformInfo(builder: JsonObjectBuilder) {
-        builder.appendField("osName", System.getProperty("os.name"));
-        builder.appendField("osArch", System.getProperty("os.arch"));
-        builder.appendField("osVersion", System.getProperty("os.version"));
-        builder.appendField("coreCount", Runtime.getRuntime().availableProcessors());
+        builder.appendField("osName", System.getProperty("os.name"))
+        builder.appendField("osArch", System.getProperty("os.arch"))
+        builder.appendField("osVersion", System.getProperty("os.version"))
+        builder.appendField("coreCount", Runtime.getRuntime().availableProcessors())
     }
 
     /**
@@ -47,12 +47,14 @@ class Tracker {
             true,
             true
         )
-        metrics.addCustomChart(SimplePie("onlineMode") {
-            if (serverConfig.getBoolean("online-mode") == true) {
-                return@SimplePie "online";
-            } else {
-                return@SimplePie "offline";
+        metrics.addCustomChart(
+            SimplePie("onlineMode") {
+                if (serverConfig.getBoolean("online-mode") == true) {
+                    return@SimplePie "online"
+                } else {
+                    return@SimplePie "offline"
+                }
             }
-        });
+        )
     }
 }

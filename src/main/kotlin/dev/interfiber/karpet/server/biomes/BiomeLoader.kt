@@ -12,7 +12,7 @@ object BiomeLoader {
      * @param manager BiomeManager to register biomes for
      * @author Interfiber
      */
-    fun loadBiomes(manager: BiomeManager){
+    fun loadBiomes(manager: BiomeManager) {
         val swampBiome = SwampBiome()
         val jungleBiome = JungleBiome()
         val sparseJungle = SparseJungle()
@@ -24,6 +24,5 @@ object BiomeLoader {
         manager.addBiome(sparseJungle.convertToBiome())
         manager.addBiome(bambooJungle.convertToBiome())
         manager.addBiome(jungleHills.convertToBiome())
-
     }
 }

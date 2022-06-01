@@ -32,20 +32,20 @@ object PlayerBlockHandler {
             if (shouldBreak) {
                 PlayerBackpack().spawnItemStack(Material.WHEAT_SEEDS, eventPlayer.position, playerInstance)
             }
-        } else if (blockType === Block.STONE){
+        } else if (blockType === Block.STONE) {
             // TODO Once enchantments are done, check if we have silk touch
             PlayerBackpack().spawnItemStack(Material.COBBLESTONE, eventPlayer.position, playerInstance)
-        } else if (blockType == Block.IRON_ORE){
-            if (PlayerBackpack().canMineBlock(Block.IRON_ORE, eventPlayer)){
+        } else if (blockType == Block.IRON_ORE) {
+            if (PlayerBackpack().canMineBlock(Block.IRON_ORE, eventPlayer)) {
                 PlayerBackpack().spawnItemStack(Material.RAW_IRON, eventPlayer.position, playerInstance)
             }
         } else if (blockType == Block.JUNGLE_LOG) {
             PlayerBackpack().spawnItemStack(Material.JUNGLE_LOG, eventPlayer.position, playerInstance)
-        } else if (blockType == Block.SPRUCE_LOG){
+        } else if (blockType == Block.SPRUCE_LOG) {
             PlayerBackpack().spawnItemStack(Material.SPRUCE_LOG, eventPlayer.position, playerInstance)
-        } else if (blockType == Block.BIRCH_LOG){
+        } else if (blockType == Block.BIRCH_LOG) {
             PlayerBackpack().spawnItemStack(Material.BIRCH_LOG, eventPlayer.position, playerInstance)
-        } else if (blockType == Block.COAL_ORE){
+        } else if (blockType == Block.COAL_ORE) {
             PlayerBackpack().spawnItemStack(Material.COAL, eventPlayer.position, playerInstance)
         }
         eventPlayer.inventory.update()

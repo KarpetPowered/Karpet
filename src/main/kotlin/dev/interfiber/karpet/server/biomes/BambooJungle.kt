@@ -13,6 +13,6 @@ class BambooJungle : MinecraftBiome() {
             .grassColor(this.stringToColor("#59C93C"))
             .foliageColor(this.stringToColor("#30BB0B"))
             .waterColor(this.stringToColor("#3F76E4"))
-            .build();
+            .build()
     }
 }

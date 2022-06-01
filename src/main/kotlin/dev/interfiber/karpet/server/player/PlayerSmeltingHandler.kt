@@ -46,27 +46,13 @@ class PlayerSmeltingHandler {
      */
     private fun fuelAccept(fuel: ItemStack): Boolean {
         val type = fuel.material()
-        return if (type == Material.COAL){
+        return if (type == Material.COAL) {
             true
         } else if (type == Material.OAK_LOG) {
             true
         } else {
             false
         }
-    }
-
-    /**
-     * Get a smelting recipe by output ID
-     * @author Interfiber
-     */
-    private fun getRecipeByID(recipeID: String, recipes: List<MinecraftSmeltingRecipe>) : MinecraftSmeltingRecipe? {
-        var recipeOut: MinecraftSmeltingRecipe? = null
-        for (recipe in recipes){
-            if (recipe.recipeID?.lowercase() == recipeID.lowercase()){
-                recipeOut = recipe
-            }
-        }
-        return recipeOut
     }
 
     private fun furnaceEvent(
@@ -76,23 +62,21 @@ class PlayerSmeltingHandler {
         smeltingInventory: Inventory,
         sItems: HashMap<Int, ItemStack>,
         recipes: List<MinecraftSmeltingRecipe>
-    ){
+    ) {
         var selectedItems = sItems
-        if (inventoryConditionResult.cursorItem != ItemStack.AIR){
+        if (inventoryConditionResult.cursorItem != ItemStack.AIR) {
             selectedItems[slot] = inventoryConditionResult.cursorItem
         } else {
             selectedItems[slot] = ItemStack.AIR
         }
 
-        if (slot == InventoryConstants.SmeltingOutputSlot && recipeOutputID.get() != null){
+        if (slot == InventoryConstants.SmeltingOutputSlot && recipeOutputID.get() != null) {
             logger.info(targetPlayer.username + " smelted a " + recipeOutputID)
             selectedItems = initAir(selectedItems)
-
 
             smeltingInventory.setItemStack(InventoryConstants.SmeltingFuelSlot, ItemStack.AIR)
             smeltingInventory.setItemStack(InventoryConstants.SmeltingInputSlot, ItemStack.AIR)
             recipeOutputID.set(null)
-
         }
         // scan for recipes, only if we have an input, and fuel item
         // scan for recipes
@@ -106,16 +90,19 @@ class PlayerSmeltingHandler {
                 selectedItems[InventoryConstants.SmeltingInputSlot]?.let { ItemStack.of(it.material(), 1) }
 
             if (currentItem?.equals(neededItem) == true && selectedItems[InventoryConstants.SmeltingFuelSlot]?.let {
-                    fuelAccept(
+                fuelAccept(
                         it
                     )
-                } == true){
+            } == true
+            ) {
                 // Found recipe
-                if (selectedItems[InventoryConstants.SmeltingInputSlot]?.amount() == selectedItems[InventoryConstants.SmeltingFuelSlot]?.amount()){
+                if (selectedItems[InventoryConstants.SmeltingInputSlot]?.amount() == selectedItems[InventoryConstants.SmeltingFuelSlot]?.amount()) {
                     recipeOutputID.set(recipe.recipeID)
                     playSound(targetPlayer, "minecraft:block.blastfurnace.fire_crackle", "MASTER", 500F, 1F)
-                    val outputItemStack = recipe.outputItem?.let { selectedItems[InventoryConstants.SmeltingInputSlot]?.amount()
-                        ?.let { it1 -> ItemStack.of(it.material(), it1) } }
+                    val outputItemStack = recipe.outputItem?.let {
+                        selectedItems[InventoryConstants.SmeltingInputSlot]?.amount()
+                            ?.let { it1 -> ItemStack.of(it.material(), it1) }
+                    }
                     if (outputItemStack != null) {
                         smeltingInventory.setItemStack(
                             InventoryConstants.SmeltingOutputSlot,
@@ -141,7 +128,7 @@ class PlayerSmeltingHandler {
      * Called when a player opens the furnace
      * @author Interfiber
      */
-    fun addFurnaceEvent(player: Player, recipes: List<MinecraftSmeltingRecipe>){
+    fun addFurnaceEvent(player: Player, recipes: List<MinecraftSmeltingRecipe>) {
         val smeltingInventory = Inventory(InventoryType.FURNACE, "Smelting")
         var selectedItems = HashMap<Int, ItemStack>()
         selectedItems = initAir(selectedItems)
