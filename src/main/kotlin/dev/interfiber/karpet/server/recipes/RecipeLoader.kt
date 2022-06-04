@@ -18,6 +18,9 @@ object RecipeLoader {
         val stonePickaxeRecipe = StonePickaxeRecipe()
         val furnaceRecipe = FurnaceRecipe()
         val ironPickaxeRecipe = IronPickaxeRecipe()
+        val woodenShovelRecipe = WoodenShovelRecipe()
+        val stoneShovelRecipe = StoneShovelRecipe()
+        val ironShovelRecipe = IronShovelRecipe()
 
         // Load all recipes
         LoadedRecipes.add(oakPlanksRecipe)
@@ -27,6 +30,9 @@ object RecipeLoader {
         LoadedRecipes.add(stonePickaxeRecipe)
         LoadedRecipes.add(furnaceRecipe)
         LoadedRecipes.add(ironPickaxeRecipe)
+        LoadedRecipes.add(woodenShovelRecipe)
+        LoadedRecipes.add(stoneShovelRecipe)
+        LoadedRecipes.add(ironShovelRecipe)
     }
     /**
      * Get all loaded recipes loaded by loadAllRecipes()
